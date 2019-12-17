@@ -21,6 +21,10 @@ app.set('view engine', 'hbs')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 
+const db = require('./models')
+const Record = db.Record
+const User = db.User
+
 app.use(session({
   secret: 'secret',
   resave: false,
@@ -47,7 +51,11 @@ app.get('/users/register', (req, res) => {
 
 // 註冊檢查
 app.post('/users/register', (req, res) => {
-  res.send('register')
+  User.create({
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password
+  }).then(user => res.redirect('/'))
 })
 
 // 登入頁面
