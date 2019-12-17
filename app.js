@@ -39,6 +39,32 @@ app.get('/', (req, res) => {
   res.send('homepage')
 })
 
+// 認證系統路由
+// 註冊頁面
+app.get('/users/register', (req, res) => {
+  res.render('register')
+})
+
+// 註冊檢查
+app.post('/users/register', (req, res) => {
+  res.send('register')
+})
+
+// 登入頁面
+app.get('/users/login', (req, res) => {
+  res.render('login')
+})
+
+// 登入檢查
+app.post('/users/login', (req, res) => {
+  res.send('login')
+})
+
+// 登出
+app.get('/users/logout', (req, res) => {
+  res.send('logout')
+})
+
 app.listen(port, () => {
   console.log(`App is running on ${port}`)
 })
