@@ -10,7 +10,7 @@ router.get('/', authenticated, (req, res) => {
     .then(user => {
       if (!user) throw new Error('user not found')
 
-      return Record.findAll({ where: { UserId: req.user.id } })
+      return Record.findAll({ where: { UserId: req.user.id }, order: [['date', 'DESC']] })
     })
     .then(records => {
       let totalAmount = 0
