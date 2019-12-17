@@ -44,11 +44,9 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/', (req, res) => {
-  res.send('homepage')
-})
-
+app.use('/', require('./routes/home'))
 app.use('/users', require('./routes/user'))
+app.use('/records', require('./routes/record'))
 
 app.listen(port, () => {
   console.log(`App is running on ${port}`)
