@@ -5,13 +5,13 @@
       <form action="/records/filter">
         <div class="row">
           <div class="col">
-            <input type="month" name="month" class="form-control month-selector" value="{{month}}"
+            <input type="month" name="month" class="form-control filter-selector" value="{{month}}"
               onChange="this.form.submit()">
           </div>
 
           <div class="col">
             <div class="form-group">
-              <select class="form-control month-selector" name="category" onChange="this.form.submit()">
+              <select class="form-control filter-selector" name="category" onChange="this.form.submit()">
                 <option value="" {{#if selectAllCategories}}selected{{/if}}>所有類別</option>
                 <option value="household" {{#if selectHousehold}}selected{{/if}}>家居物業</option>
                 <option value="transportation" {{#if selectTransportation}}selected{{/if}}>交通出行</option>
@@ -34,7 +34,7 @@
   </div>
   {{#unless isDataEmpty}}
   <div class="col-8  mx-auto scrollbar">
-    <table class="table table-striped">
+    <table class="table table-striped bg-light">
       <tbody>
         {{#each records}}
         <tr>
@@ -73,7 +73,7 @@
           </td>
           <td class="text-center pt-3">
             <div class="button-wrapper pt-4">
-              <button type="button" class="btn btn-warning mr-1" data-toggle="modal" data-target="#edit{{{this.id}}}">
+              <button type="button" class="btn btn-warning mr-3" data-toggle="modal" data-target="#edit{{{this.id}}}">
                 <i class="far fa-edit"></i>
               </button>
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{{this.id}}}">
@@ -199,7 +199,7 @@
 
   {{!-- Create button trigger modal --}}
   <div class="container text-center mb-5 mt-2">
-    <button type="button" class="btn btn-success col-6 mt-3" data-toggle="modal" data-target="#create">
+    <button type="button" class="btn btn-success col-6 mt-4" data-toggle="modal" data-target="#create">
       新增支出
     </button>
   </div>
