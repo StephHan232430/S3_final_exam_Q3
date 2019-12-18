@@ -1,7 +1,8 @@
 (function () {
-  const spendingDate = document.querySelector('#spending-date')
+  const spendingDates = document.querySelectorAll('.spending-date')
   const today = new Date().toISOString().substring(0, 10)
 
-  spendingDate.setAttribute('max', today)
-
+  for (let spendingDate of spendingDates) {
+    spendingDate.setAttribute('max', today)
+  }
 })()

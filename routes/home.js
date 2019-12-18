@@ -29,8 +29,15 @@ router.get('/', authenticated, (req, res) => {
           case 'diet':
             record.diet = true
             break
-          default:
+          case 'others':
             record.others = true
+            break
+          default:
+            record.household = false
+            record.transportation = false
+            record.entertainment = false
+            record.diet = false
+            record.others = false
         }
       }
       return res.render('index', { records, totalAmount })

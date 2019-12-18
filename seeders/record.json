@@ -3,7 +3,7 @@
     {
       "name": "房租",
       "merchant": "房東",
-      "category": "househlod",
+      "category": "household",
       "amount": 8000,
       "date": "2016-02-01"
     },
@@ -31,7 +31,7 @@
     {
       "name": "錢包遺失",
       "merchant": "Unknown",
-      "category": "Others",
+      "category": "others",
       "amount": 3000,
       "date": "2019-11-01"
     },
@@ -47,14 +47,14 @@
       "merchant": "高鐵",
       "category": "transportation",
       "amount": 1500,
-      "date": "2019-12-01"
+      "date": "2019-10-01"
     },
     {
       "name": "家庭出遊",
       "merchant": "六福村",
       "category": "entertainment",
       "amount": 8000,
-      "date": "2019-12-31"
+      "date": "2019-10-31"
     },
     {
       "name": "晚餐",
@@ -103,14 +103,14 @@
       "merchant": "Apple Store",
       "category": "others",
       "amount": 50000,
-      "date": "2019-12-02"
+      "date": "2019-10-02"
     },
     {
       "name": "修冷氣",
       "merchant": "全國電子",
       "category": "household",
       "amount": 3000,
-      "date": "2019-12-30"
+      "date": "2019-10-30"
     }
   ]
 }

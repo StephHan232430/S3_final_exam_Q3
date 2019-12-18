@@ -45,27 +45,29 @@ router.get('/', authenticated, (req, res) => {
   }
 
   if (category !== '') {
-    let monthStart = new Date(`${month}-01`)
-    let extendedMonthEnd = new Date(`${month}-31`)
-    let fullMonthEnd = new Date(`${month}-30`)
-    let extendedLeapMonthEnd = new Date(`${month}-29`)
-    let leapMonthEnd = new Date(`${month}-28`)
+    if (month !== '') {
+      let monthStart = new Date(`${month}-01`)
+      let extendedMonthEnd = new Date(`${month}-31`)
+      let fullMonthEnd = new Date(`${month}-30`)
+      let extendedLeapMonthEnd = new Date(`${month}-29`)
+      let leapMonthEnd = new Date(`${month}-28`)
 
-    if (monthStart.toISOString().substring(0, 7) !== extendedLeapMonthEnd.toISOString().substring(0, 7)) {
-      filter.where.date = {
-        [Op.between]: [monthStart, leapMonthEnd]
-      }
-    } else if (monthStart.toISOString().substring(0, 7) !== fullMonthEnd.toISOString().substring(0, 7)) {
-      filter.where.date = {
-        [Op.between]: [monthStart, extendedLeapMonthEnd]
-      }
-    } else if (monthStart.toISOString().substring(0, 7) !== extendedMonthEnd.toISOString().substring(0, 7)) {
-      filter.where.date = {
-        [Op.between]: [monthStart, fullMonthEnd]
-      }
-    } else {
-      filter.where.date = {
-        [Op.between]: [monthStart, extendedMonthEnd]
+      if (monthStart.toISOString().substring(0, 7) !== extendedLeapMonthEnd.toISOString().substring(0, 7)) {
+        filter.where.date = {
+          [Op.between]: [monthStart, leapMonthEnd]
+        }
+      } else if (monthStart.toISOString().substring(0, 7) !== fullMonthEnd.toISOString().substring(0, 7)) {
+        filter.where.date = {
+          [Op.between]: [monthStart, extendedLeapMonthEnd]
+        }
+      } else if (monthStart.toISOString().substring(0, 7) !== extendedMonthEnd.toISOString().substring(0, 7)) {
+        filter.where.date = {
+          [Op.between]: [monthStart, fullMonthEnd]
+        }
+      } else {
+        filter.where.date = {
+          [Op.between]: [monthStart, extendedMonthEnd]
+        }
       }
     }
     filter.where.category = category
