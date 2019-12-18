@@ -51,6 +51,7 @@ app.use('/', require('./routes/home'))
 app.use('/users', require('./routes/user'))
 app.use('/records', require('./routes/record'))
 app.use('/records/filter', require('./routes/filter'))
+app.use('/auth', require('./routes/auths'))
 
 app.listen(port, () => {
   console.log(`App is running on ${port}`)
