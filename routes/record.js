@@ -34,7 +34,7 @@ router.put('/:id', authenticated, (req, res) => {
   })
     .then(record => {
       record.name = req.body.name
-      record.merchant = req.body.merchamt
+      record.merchant = req.body.merchant
       record.date = req.body.date
       record.category = req.body.category
       record.amount = req.body.amount
