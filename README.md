@@ -36,24 +36,47 @@ cd S3_final_exam_Q3
 npm install
 ```
 
-4. 於 terminal 輸入指令匯入種子資料
+4. 以程式碼編輯器開啟專案後，於根目錄新增.env檔，並依以下格式撰寫第三方登入設定
+
+```
+// .env
+
+FACEBOOK_ID=
+FACEBOOK_SECRET=
+FACEBOOK_CALLBACK=http://localhost:3000/auth/facebook/callback
+```
+
+5. 於MySQL Workbench介面的query tab輸入以下指令
+```
+/ 確認不存在expense_tracker_sequelize資料庫後，建立expense_tracker_sequelize資料庫，並使用之。 /
+drop database if exists expense_tracker_sequelize;
+create database expense_tracker_sequelize;
+use expense_tracker_sequelize;
+```
+
+6. 於terminal輸入下方指令，建立資料庫schema
+```
+npx sequelize db:migrate
+```
+
+7. 於 terminal 輸入下方指令匯入種子資料
 
 ```
 npm run seeder
 ```
 
-5. 待 terminal 出現下列訊息，表示種子資料已新增至資料庫，按下 <kbd>command</kbd> + <kbd>c</kbd> 結束執行
+8. 待 terminal 出現下列訊息，表示種子資料已新增至資料庫，按下 <kbd>command</kbd> + <kbd>c</kbd> 結束執行
 
 ```
 seeded!
 ```
 
-6. 執行專案
+9. 執行專案
 ```
 npm run dev
 ```
 
-7. 開啟網頁瀏覽器，於網址列輸入
+10. 開啟網頁瀏覽器，於網址列輸入
 ```
 http://localhost:3000
 ```
@@ -77,6 +100,7 @@ http://localhost:3000
 - [method-override v3.0.0](https://www.npmjs.com/package/method-override)
 - [MySQL v8.0.18](https://dev.mysql.com/downloads/mysql/)
 - [mysql2 v2.0.2](https://www.npmjs.com/package/mysql2)
+- [MySQL Workbench 8.0.18](https://dev.mysql.com/downloads/workbench/)
 - [Node.js v12.13.0](https://nodejs.org/en/)
 - [passport v0.4.0](https://www.npmjs.com/package/passport)
 - [passport-facebook v3.0.0](https://www.npmjs.com/package/passport-facebook)
